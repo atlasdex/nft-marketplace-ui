@@ -1,0 +1,8 @@
+export const STORE_WEB3_CONTEXT = "STORE_WEB3_CONTEXT";
+export const SET_CHAIN_DATA = "SET_CHAIN_DATA";
+
+export const SET_NETWORK = "SET_NETWORK";
+
+export const SET_SOLANA_INSTANCE = "SET_SOLANA_INSTANCE";
+
+export const SET_WALLET_DATA = "SET_WALLET_DATA";

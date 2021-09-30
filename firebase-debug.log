@@ -1,0 +1,29 @@
+[debug] [2021-09-25T23:23:19.401Z] ----------------------------------------------------------------------
+[debug] [2021-09-25T23:23:19.403Z] Command:       /usr/bin/node /usr/local/bin/firebase init
+[debug] [2021-09-25T23:23:19.403Z] CLI Version:   9.5.0
+[debug] [2021-09-25T23:23:19.404Z] Platform:      linux
+[debug] [2021-09-25T23:23:19.404Z] Node Version:  v10.19.0
+[debug] [2021-09-25T23:23:19.404Z] Time:          Sun Sep 26 2021 04:23:19 GMT+0500 (Pakistan Standard Time)
+[debug] [2021-09-25T23:23:19.404Z] ----------------------------------------------------------------------
+[debug] [2021-09-25T23:23:19.404Z] 
+[debug] [2021-09-25T23:23:19.409Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-09-25T23:23:19.409Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/bilal/Work/atlas-frontend
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
