@@ -1,6 +1,9 @@
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import CollectionForm from "../components/CollectionForm";
+import { ChooseImage2Svg, ChooseImage3Svg, ChooseImageSvg } from "../assets";
+import { GradientButton } from "../components/Buttons/GradientButton";
+import CollectionForm from "../components/CreateCollection/CollectionForm";
+import Label from "../components/Inputs/Label";
 
 const CreateNewCollection = () => {
   const classes = useStyles();
@@ -16,7 +19,9 @@ const CreateNewCollection = () => {
               Upload Logo
             </Typography>
             <Box className={classes.uploadLogoBoxBottom}>
-              <Box className={classes.uploadLogoBoxPicker}></Box>
+              <Box className={classes.uploadLogoBoxPicker}>
+                <img src={ChooseImageSvg} />
+              </Box>
               <Box className={classes.uploadLogoBoxTextContainer}>
                 <Typography className={classes.uploadLogoBoxText}>
                   Drag & Drop file or Browse file from your computer
@@ -38,7 +43,9 @@ const CreateNewCollection = () => {
               </Box>
             </Box>
             <Box className={classes.uploadImageBoxBottom}>
-              <Box className={classes.uploadImageBoxPicker}></Box>
+              <Box className={classes.uploadImageBoxPicker}>
+                <img src={ChooseImage2Svg} />
+              </Box>
             </Box>
           </Box>
         </Box>{" "}
@@ -59,10 +66,23 @@ const CreateNewCollection = () => {
             <Box
               className={classes.uploadImageBoxPicker}
               style={{ width: "70rem" }}
-            ></Box>
+            >
+              <img src={ChooseImage3Svg} />
+            </Box>
           </Box>
         </Box>
         <CollectionForm />
+        <Box display="flex" justifyContent="center">
+          <GradientButton className={classes.createBtn}>
+            <Label
+              text="Create"
+              marginBottom={0}
+              fontSize={"2.2rem"}
+              lineHeight="3.3rem"
+              fontWeight={600}
+            />
+          </GradientButton>
+        </Box>
       </Box>
     </Box>
   );
@@ -132,6 +152,10 @@ const useStyles = makeStyles((theme) => ({
     width: "12rem",
     borderRadius: 100,
     border: "1px dashed #fff",
+    display: "flex",
+
+    alignItems: "center",
+    justifyContent: "center",
   },
   uploadLogoBoxTextContainer: {
     flex: 1,
@@ -176,6 +200,9 @@ const useStyles = makeStyles((theme) => ({
     width: "25rem",
     borderRadius: 10,
     border: "1px dashed #fff",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   uploadImageBoxTextContainer: {},
   uploadImageBoxText: {
@@ -186,4 +213,11 @@ const useStyles = makeStyles((theme) => ({
 
     maxWidth: "40rem",
   },
+
+  createBtn: {
+    width: "25rem",
+    height: "6rem",
+  },
+
+  createBtnText: {},
 }));

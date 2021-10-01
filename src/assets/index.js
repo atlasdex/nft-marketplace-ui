@@ -1,4 +1,4 @@
-import LandingNfts from "./Landing/nfts.svg";
+import LandingNfts from "./Landing/nfts.png";
 
 import ArrowRightUpSvg from "./Landing/arrow-right-up.svg";
 
@@ -17,6 +17,16 @@ import InstagramSvg from "./CreateCollection/instagram.svg";
 import TelegramSvg from "./CreateCollection/telegram.svg";
 import TwitterSvg from "./CreateCollection/twitter.svg";
 
+import ChooseImageSvg from "./CreateCollection/choose-image.svg";
+
+import ChooseImage2Svg from "./CreateCollection/choose-image-3.svg";
+
+import ChooseImage3Svg from "./CreateCollection/choose-image-2.svg";
+
+import NftSvg1 from "./MyCollections/nft-1.svg";
+
+import NftSvg1Sub from "./MyCollections/nft-1-sub.svg";
+
 export {
   LandingNfts,
   ArrowRightUpSvg,
@@ -32,4 +42,9 @@ export {
   InstagramSvg,
   TelegramSvg,
   TwitterSvg,
+  ChooseImageSvg,
+  ChooseImage2Svg,
+  ChooseImage3Svg,
+  NftSvg1,
+  NftSvg1Sub,
 };

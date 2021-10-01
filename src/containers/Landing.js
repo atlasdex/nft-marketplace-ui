@@ -4,6 +4,43 @@ import { ArrowRightUpSvg, LandingNfts } from "../assets";
 import { BorderGradientButton } from "../components/Buttons/BorderGradientButton";
 import { GradientButton } from "../components/Buttons/GradientButton";
 
+const Landing = () => {
+  const classes = useStyles();
+
+  return (
+    <Box className={classes.container}>
+      <Box className={classes.containerLeft}>
+        <Typography className={classes.heading}>
+          Discover, Collect, and Sell{" "}
+          <Box className={classes.headingGradient}>Digital Art NFT</Box>{" "}
+          Collection
+        </Typography>
+        <Typography className={classes.desc}>
+          A marketplace that has popular artists from the world who are
+          presenting their top notch work.
+        </Typography>
+
+        <GradientButton className={classes.exploreBtn}>
+          <Typography
+            className={classes.createBtnText}
+            style={{ marginRight: "1rem" }}
+          >
+            Explore
+          </Typography>
+          <img src={ArrowRightUpSvg} />
+        </GradientButton>
+        <BorderGradientButton className={classes.createBtn}>
+          <Typography className={classes.createBtnText}>Create</Typography>
+        </BorderGradientButton>
+      </Box>
+      <Box className={classes.containerRight}>
+        <img src={LandingNfts} style={{ height: "65rem", width: "55rem" }} />
+      </Box>
+    </Box>
+  );
+};
+
+export default Landing;
 const useStyles = makeStyles((theme) => ({
   container: {
     background: "#000",
@@ -58,41 +95,3 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "3rem",
   },
 }));
-
-const Landing = () => {
-  const classes = useStyles();
-
-  return (
-    <Box className={classes.container}>
-      <Box className={classes.containerLeft}>
-        <Typography className={classes.heading}>
-          Discover, Collect, and Sell{" "}
-          <Box className={classes.headingGradient}>Digital Art NFT</Box>{" "}
-          Collection
-        </Typography>
-        <Typography className={classes.desc}>
-          A marketplace that has popular artists from the world who are
-          presenting their top notch work.
-        </Typography>
-
-        <GradientButton className={classes.exploreBtn}>
-          <Typography
-            className={classes.createBtnText}
-            style={{ marginRight: "1rem" }}
-          >
-            Explore
-          </Typography>
-          <img src={ArrowRightUpSvg} />
-        </GradientButton>
-        <BorderGradientButton className={classes.createBtn}>
-          <Typography className={classes.createBtnText}>Create</Typography>
-        </BorderGradientButton>
-      </Box>
-      <Box className={classes.containerRight}>
-        <img src={LandingNfts} />
-      </Box>
-    </Box>
-  );
-};
-
-export default Landing;

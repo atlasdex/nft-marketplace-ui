@@ -4,11 +4,6 @@ import React from "react";
 const useStyles = makeStyles((theme) => ({
   container: {
     background: "#000",
-    height: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-around",
-    padding: "0 10rem",
   },
 }));
 

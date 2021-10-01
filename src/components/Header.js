@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: "5rem",
+    marginBottom: "8rem",
   },
 
   connectBtnText: {

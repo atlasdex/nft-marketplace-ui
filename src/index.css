@@ -13,14 +13,9 @@ html {
   font-size: 55% !important; /* 62.5% of 16px = 10px */
 }
 
-@media only screen and (min-width: 1500px) {
-  html {
-    font-size: 70% !important; /* 62.5% of 16px = 10px */
-  }
-}
 @media only screen and (min-width: 1600px) {
   html {
-    font-size: 70% !important; /* 62.5% of 16px = 10px */
+    font-size: 60% !important; /* 62.5% of 16px = 10px */
   }
 }
 

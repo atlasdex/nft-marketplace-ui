@@ -20,6 +20,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import SelectWallet from "./containers/SelectWallet";
 import CreateNewCollection from "./containers/CreateNewCollection";
 import SolanaConnection from "./components/SolanaConnection";
+import MyCollections from "./containers/MyCollections";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
                 path="/create-new-collection"
                 exact
               />
+              <Route component={MyCollections} path="/my-collections" exact />
             </Switch>
           </Layout>
         </Router>

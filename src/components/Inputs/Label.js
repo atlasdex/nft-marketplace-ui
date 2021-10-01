@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: ({ fontWeight }) => (fontWeight ? fontWeight : 400),
     color: ({ color }) => (color ? color : "#fff"),
     marginBottom: ({ marginBottom }) =>
-      marginBottom ? marginBottom : "1.2rem",
+      marginBottom || marginBottom === 0 ? marginBottom : "1.2rem",
   },
 }));
 
