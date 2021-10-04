@@ -21,6 +21,7 @@ import SelectWallet from "./containers/SelectWallet";
 import CreateNewCollection from "./containers/CreateNewCollection";
 import SolanaConnection from "./components/SolanaConnection";
 import MyCollections from "./containers/MyCollections";
+import Profile from "./containers/Profile";
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
                 exact
               />
               <Route component={MyCollections} path="/my-collections" exact />
+
+              <Route component={Profile} path="/profile" exact />
             </Switch>
           </Layout>
         </Router>

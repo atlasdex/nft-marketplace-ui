@@ -3,6 +3,8 @@ import React from "react";
 import Label from "../components/Inputs/Label";
 import { GradientButton } from "../components/Buttons/GradientButton";
 import NftCard from "../components/NftCard";
+import { ThreeDotsSvg } from "../assets";
+import { BorderGradientButton } from "../components/Buttons/BorderGradientButton";
 
 const MyCollections = () => {
   const classes = useStyles();
@@ -29,7 +31,7 @@ const MyCollections = () => {
             marginBottom={0}
           />
         </Box>
-        <Box>
+        <Box display="flex" alignItems="center">
           <GradientButton className={classes.createCollectionBtn}>
             <Label
               text="Create Collection"
@@ -39,20 +41,32 @@ const MyCollections = () => {
               marginBottom={0}
             />
           </GradientButton>
+
+          <Box className={classes.threeDotsContainer}>
+            <img src={ThreeDotsSvg} style={{ height: "4rem" }} />
+          </Box>
         </Box>
       </Box>
 
-      <Box display="flex" justifyContent="space-between" marginBottom="5rem">
-        <NftCard />
-        <NftCard />
-        <NftCard />
-        <NftCard />
+      <Box marginBottom="10rem">
+        <Box display="flex" justifyContent="space-between" marginBottom="5rem">
+          <NftCard />
+          <NftCard />
+          <NftCard />
+          <NftCard />
+        </Box>
+        <Box display="flex" justifyContent="space-between">
+          <NftCard />
+          <NftCard />
+          <NftCard />
+          <NftCard />
+        </Box>
       </Box>
-      <Box display="flex" justifyContent="space-between">
-        <NftCard />
-        <NftCard />
-        <NftCard />
-        <NftCard />
+
+      <Box display="flex" justifyContent="center">
+        <BorderGradientButton className={classes.loadMoreBtn}>
+          <Typography className={classes.gradientText}>Load More</Typography>
+        </BorderGradientButton>
       </Box>
     </Box>
   );
@@ -68,5 +82,26 @@ const useStyles = makeStyles((theme) => ({
   createCollectionBtn: {
     height: "6rem",
     width: "24rem",
+    marginRight: "5rem",
+  },
+
+  threeDotsContainer: {
+    cursor: "pointer",
+  },
+
+  loadMoreBtn: {
+    width: "34rem",
+    height: "5rem",
+  },
+
+  gradientText: {
+    background:
+      "-webkit-linear-gradient(291.08deg, #00A69C 3.08%, #AC51FF 117.64%)",
+
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    fontWeight: 600,
+    fontSize: "1.4rem",
+    lineHeight: "2.1rem",
   },
 }));

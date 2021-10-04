@@ -1,6 +1,6 @@
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import { NftSvg1, NftSvg1Sub } from "../assets";
+import { NftSvg1, NftSvg1Sub, ThreeDotsSvg } from "../assets";
 import Label from "./Inputs/Label";
 
 const NftCard = () => {
@@ -21,6 +21,19 @@ const NftCard = () => {
             fontSize="1.8rem"
             lineHeight="2.7rem"
           />
+        </Box>
+
+        <Box className={classes.colorCode}>
+          <Label
+            text="#7abW20"
+            fontWeight={500}
+            fontSize="1.6rem"
+            lineHeight="2.4rem"
+            marginBottom={0}
+          />
+        </Box>
+        <Box className={classes.threeDotsContainer}>
+          <img src={ThreeDotsSvg} />
         </Box>
       </Box>
       <Box padding="0 1.5rem">
@@ -49,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
     width: "40rem",
     height: "50rem",
     padding: "1rem",
+    marginRight: "2.5rem",
   },
 
   header: {
@@ -84,5 +98,45 @@ const useStyles = makeStyles((theme) => ({
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     padding: ".8rem 0 .5rem 1rem",
+  },
+
+  colorCode: {
+    width: "10rem",
+    height: "3rem",
+    background:
+      "radial-gradient(100% 100% at 0% 0%, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 100%)",
+    boxShadow: "inset -5px -5px 250px rgba(255, 255, 255, 0.02)",
+    backdropFilter: "blur(12px)",
+    /* Note: backdrop-filter has minimal browser support */
+
+    borderRadius: 10,
+    position: "absolute",
+    top: "2rem",
+    left: "2rem",
+    display: "flex",
+
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  threeDotsContainer: {
+    height: "3.2rem",
+    width: "3.2rem",
+
+    background:
+      "radial-gradient(100% 100% at 0% 0%, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 100%)",
+    boxShadow: "inset -5px -5px 250px rgba(255, 255, 255, 0.02)",
+    backdropFilter: "blur(12px)",
+    /* Note: backdrop-filter has minimal browser support */
+
+    borderRadius: 25,
+    position: "absolute",
+    top: "2rem",
+    right: "2rem",
+    display: "flex",
+
+    justifyContent: "center",
+    alignItems: "center",
+    cursor: "pointer",
   },
 }));

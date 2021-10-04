@@ -27,6 +27,13 @@ import NftSvg1 from "./MyCollections/nft-1.svg";
 
 import NftSvg1Sub from "./MyCollections/nft-1-sub.svg";
 
+import ThreeDotsSvg from "./MyCollections/three-dots.svg";
+import ProfileBanner from "./Profile/banner.png";
+
+import ProfileAvatarSvg from "./Profile/profile-avatar.svg";
+
+import CopySvg from "./Profile/Copy.svg";
+
 export {
   LandingNfts,
   ArrowRightUpSvg,
@@ -47,4 +54,8 @@ export {
   ChooseImage3Svg,
   NftSvg1,
   NftSvg1Sub,
+  ThreeDotsSvg,
+  ProfileBanner,
+  ProfileAvatarSvg,
+  CopySvg,
 };

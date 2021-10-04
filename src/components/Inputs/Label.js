@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
     color: ({ color }) => (color ? color : "#fff"),
     marginBottom: ({ marginBottom }) =>
       marginBottom || marginBottom === 0 ? marginBottom : "1.2rem",
+
+    marginRight: ({ marginRight }) =>
+      marginRight || marginRight === 0 ? marginRight : 0,
   },
 }));
 
@@ -20,6 +23,7 @@ const Label = ({
   lineHeight,
   color,
   marginBottom,
+  marginRight,
 }) => {
   const classes = useStyles({
     fontSize,
@@ -27,6 +31,7 @@ const Label = ({
     lineHeight,
     color,
     marginBottom,
+    marginRight,
   });
 
   return <Typography className={classes.text}>{text}</Typography>;
