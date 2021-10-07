@@ -3,9 +3,11 @@ import { Box, makeStyles, Typography, Button } from "@material-ui/core";
 import { useWeb3React } from "@web3-react/core";
 import React, { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import { AtlasLogoSvg, SearchIconSvg } from "../assets";
 import { conciseAddress } from "../utils/formatters";
 import { GradientButton } from "./Buttons/GradientButton";
+import UserDropdown from "./Dropdowns/UserDropdown";
 import Input from "./Inputs/Input";
 import InputWithLabel from "./Inputs/InputWithLabel";
 import SelectWalletModal from "./Modals/SelectWalletModal";
@@ -54,6 +56,8 @@ const Header = () => {
 
   console.log("walletData Instance =<  ", walletData);
 
+  const history = useHistory();
+
   return (
     <Box className={classes.container}>
       <img src={AtlasLogoSvg} />
@@ -68,16 +72,23 @@ const Header = () => {
           border={false}
           InputAction={() => <img src={SearchIconSvg} />}
         />
-        <Button className={classes.btn}>
+        <Button
+          className={classes.btn}
+          onClick={() => history.push("marketplace")}
+        >
           <Typography className={classes.btnText}>Market</Typography>
         </Button>
-        <Button className={classes.btn}>
+        <Button
+          className={classes.btn}
+          onClick={() => history.push("create-new-collection")}
+        >
           <Typography className={classes.btnText}>Create</Typography>
         </Button>
-        <Button className={classes.btn}>
+        <Button className={classes.btn} onClick={() => history.push("profile")}>
           <Typography className={classes.btnText}>Profile</Typography>
         </Button>
-        {walletData ? (
+
+        {/* {walletData ? (
           <GradientButton
             height={50}
             width={170}
@@ -87,6 +98,26 @@ const Header = () => {
               {conciseAddress(walletData?.publicKey?.toBase58())}
             </Typography>
           </GradientButton>
+        ) : (
+          <GradientButton
+            height={50}
+            width={170}
+            onClick={() => setShowModal(true)}
+          >
+            {walletData ? (
+              <Typography className={classes.connectBtnText}>
+                {conciseAddress(walletData.publicKey?.toBase58())}
+              </Typography>
+            ) : (
+              <Typography className={classes.connectBtnText}>
+                Connect Wallet
+              </Typography>
+            )}
+          </GradientButton>
+        )} */}
+
+        {walletData ? (
+          <UserDropdown />
         ) : (
           <GradientButton
             height={50}

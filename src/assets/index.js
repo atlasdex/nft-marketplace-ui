@@ -34,6 +34,18 @@ import ProfileAvatarSvg from "./Profile/profile-avatar.svg";
 
 import CopySvg from "./Profile/Copy.svg";
 
+import UsernameSvg from "./Header/username.svg";
+import ProfileSvg from "./Header/user.svg";
+import FavoriteSvg from "./Header/favorite.svg";
+import CollectionsSvg from "./Header/collection.svg";
+import LogoutSvg from "./Header/logout.svg";
+
+import VerifiedSvg from "./Marketplace/verified.svg";
+
+import ChooseImage90x90 from "./CreateNft/choose-image-90x90.svg";
+
+import NftImageSvg from "./CreateNft/nft-image.svg";
+
 export {
   LandingNfts,
   ArrowRightUpSvg,
@@ -58,4 +70,12 @@ export {
   ProfileBanner,
   ProfileAvatarSvg,
   CopySvg,
+  UsernameSvg,
+  ProfileSvg,
+  FavoriteSvg,
+  CollectionsSvg,
+  LogoutSvg,
+  ChooseImage90x90,
+  VerifiedSvg,
+  NftImageSvg,
 };

@@ -22,6 +22,8 @@ import CreateNewCollection from "./containers/CreateNewCollection";
 import SolanaConnection from "./components/SolanaConnection";
 import MyCollections from "./containers/MyCollections";
 import Profile from "./containers/Profile";
+import MarketPlace from "./containers/Marketplace";
+import EditNft from "./containers/EditNft";
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
               <Route component={MyCollections} path="/my-collections" exact />
 
               <Route component={Profile} path="/profile" exact />
+              <Route component={MarketPlace} path="/marketplace" exact />
+              <Route component={EditNft} path="/edit-nft" exact />
             </Switch>
           </Layout>
         </Router>
