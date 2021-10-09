@@ -1,5 +1,6 @@
 import { Box, makeStyles, Typography } from "@material-ui/core";
-import React from "react";
+import { Close } from "@material-ui/icons";
+import React, { useState } from "react";
 import { ChooseImage2Svg, ChooseImage3Svg, ChooseImageSvg } from "../assets";
 import { GradientButton } from "../components/Buttons/GradientButton";
 import CollectionForm from "../components/CreateCollection/CollectionForm";
@@ -8,6 +9,34 @@ import Label from "../components/Inputs/Label";
 const CreateNewCollection = () => {
   const classes = useStyles();
 
+  const [previewLogoSource, setPreviewLogoSource] = useState(null);
+  const [previewFeaturedImageSource, setPreviewFeaturedImageSource] =
+    useState(null);
+
+  const fileHandlerLogo = async (e) => {
+    if (e.target.files[0]) {
+      console.log("fileHandlerLogo => ", e.target.files[0]);
+
+      previewFile(e.target.files[0], setPreviewLogoSource);
+    }
+  };
+
+  const fileHandlerFeaturedImage = async (e) => {
+    if (e.target.files[0]) {
+      console.log("fileHandlerFeaturedImage => ", e.target.files[0]);
+
+      previewFile(e.target.files[0], setPreviewFeaturedImageSource);
+    }
+  };
+
+  const previewFile = (file, callback) => {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      callback(reader.result);
+    };
+  };
   return (
     <Box className={classes.container}>
       <Typography className={classes.heading}>Create New Collection</Typography>
@@ -15,38 +44,95 @@ const CreateNewCollection = () => {
       <Box className={classes.containerContent}>
         <Box className={classes.containerContentUpper}>
           <Box className={classes.uploadLogoBox}>
-            <Typography className={classes.uploadLogoBoxHeading}>
-              Upload Logo
-            </Typography>
-            <Box className={classes.uploadLogoBoxBottom}>
-              <Box className={classes.uploadLogoBoxPicker}>
-                <img src={ChooseImageSvg} />
-              </Box>
-              <Box className={classes.uploadLogoBoxTextContainer}>
-                <Typography className={classes.uploadLogoBoxText}>
-                  Drag & Drop file or Browse file from your computer
+            {previewLogoSource ? (
+              <>
+                <Box
+                  className={classes.removeIcon}
+                  onClick={() => setPreviewLogoSource(null)}
+                >
+                  <Close style={{ color: "#fff", fontSize: "3rem" }} />
+                </Box>
+
+                <Box
+                  style={{ textAlign: "center", height: "100%", width: "100%" }}
+                >
+                  <img src={previewLogoSource} style={{ height: "100%" }} />
+                </Box>
+              </>
+            ) : (
+              <>
+                <Typography className={classes.uploadLogoBoxHeading}>
+                  Upload Logo
                 </Typography>
-              </Box>
-            </Box>
+                <Box className={classes.uploadLogoBoxBottom}>
+                  <input
+                    type="file"
+                    onChange={fileHandlerLogo}
+                    id="upload"
+                    hidden
+                  />
+                  <label htmlFor="upload" className={classes.uploadInput}>
+                    <Box className={classes.uploadLogoBoxPicker}>
+                      <img src={ChooseImageSvg} />
+                    </Box>
+                  </label>
+                  <Box className={classes.uploadLogoBoxTextContainer}>
+                    <Typography className={classes.uploadLogoBoxText}>
+                      Drag & Drop file or Browse file from your computer
+                    </Typography>
+                  </Box>
+                </Box>
+              </>
+            )}
           </Box>
           <Box className={classes.uploadImageBox}>
-            <Box>
-              <Typography className={classes.uploadImageBoxHeading}>
-                Upload Featured Image
-              </Typography>
-              <Box className={classes.uploadImageBoxTextContainer}>
-                <Typography className={classes.uploadImageBoxText}>
-                  This image will be used for featuring your collection on the
-                  homepage, category pages, or other promotional areas of
-                  OpenSea. 600 x 400 recommended.
-                </Typography>
-              </Box>
-            </Box>
-            <Box className={classes.uploadImageBoxBottom}>
-              <Box className={classes.uploadImageBoxPicker}>
-                <img src={ChooseImage2Svg} />
-              </Box>
-            </Box>
+            {previewFeaturedImageSource ? (
+              <>
+                <Box
+                  className={classes.removeIcon}
+                  onClick={() => setPreviewFeaturedImageSource(null)}
+                >
+                  <Close style={{ color: "#fff", fontSize: "3rem" }} />
+                </Box>
+
+                <Box
+                  style={{ textAlign: "center", height: "100%", width: "100%" }}
+                >
+                  <img
+                    src={previewFeaturedImageSource}
+                    style={{ height: "100%" }}
+                  />
+                </Box>
+              </>
+            ) : (
+              <>
+                <Box>
+                  <Typography className={classes.uploadImageBoxHeading}>
+                    Upload Featured Image
+                  </Typography>
+                  <Box className={classes.uploadImageBoxTextContainer}>
+                    <Typography className={classes.uploadImageBoxText}>
+                      This image will be used for featuring your collection on
+                      the homepage, category pages, or other promotional areas
+                      of OpenSea. 600 x 400 recommended.
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box className={classes.uploadImageBoxBottom}>
+                  <input
+                    type="file"
+                    onChange={fileHandlerFeaturedImage}
+                    id="uploadF"
+                    hidden
+                  />
+                  <label htmlFor="uploadF" className={classes.uploadInput}>
+                    <Box className={classes.uploadImageBoxPicker}>
+                      <img src={ChooseImage2Svg} />
+                    </Box>
+                  </label>
+                </Box>
+              </>
+            )}
           </Box>
         </Box>{" "}
         <Box className={classes.uploadImageBox} marginBottom="6rem">
@@ -63,12 +149,15 @@ const CreateNewCollection = () => {
             </Box>
           </Box>
           <Box className={classes.uploadImageBoxBottom}>
-            <Box
-              className={classes.uploadImageBoxPicker}
-              style={{ width: "70rem" }}
-            >
-              <img src={ChooseImage3Svg} />
-            </Box>
+            <input type="file" onChange={() => {}} id="upload" hidden />
+            <label htmlFor="upload" className={classes.uploadInput}>
+              <Box
+                className={classes.uploadImageBoxPicker}
+                style={{ width: "70rem" }}
+              >
+                <img src={ChooseImage3Svg} />
+              </Box>
+            </label>
           </Box>
         </Box>
         <CollectionForm />
@@ -132,6 +221,7 @@ const useStyles = makeStyles((theme) => ({
     height: "25rem",
     padding: "2rem",
     marginRight: "2rem",
+    position: "relative",
   },
   uploadLogoBoxHeading: {
     fontWeight: 500,
@@ -156,6 +246,7 @@ const useStyles = makeStyles((theme) => ({
 
     alignItems: "center",
     justifyContent: "center",
+    cursor: "pointer",
   },
   uploadLogoBoxTextContainer: {
     flex: 1,
@@ -179,6 +270,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     // alignItems: "center",
     justifyContent: "space-between",
+    position: "relative",
   },
 
   uploadImageBoxHeading: {
@@ -203,6 +295,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    cursor: "pointer",
   },
   uploadImageBoxTextContainer: {},
   uploadImageBoxText: {
@@ -220,4 +313,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   createBtnText: {},
+
+  removeIcon: {
+    position: "absolute",
+    top: 10,
+    right: 10,
+    cursor: "pointer",
+  },
 }));

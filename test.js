@@ -1,12 +1,6 @@
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    background: "#000",
-  },
-}));
-
 const Landing = () => {
   const classes = useStyles();
 
@@ -18,3 +12,9 @@ const Landing = () => {
 };
 
 export default Landing;
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    background: "#000",
+  },
+}));

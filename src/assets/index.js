@@ -46,6 +46,14 @@ import ChooseImage90x90 from "./CreateNft/choose-image-90x90.svg";
 
 import NftImageSvg from "./CreateNft/nft-image.svg";
 
+import SingleNftSvg from "./SingleNft/single-nft.svg";
+
+import ArrowRightUpSquareSvg from "./SingleNft/bi_arrow-up-right-square.svg";
+import RefreshSvg from "./SingleNft/eva_refresh-fill.svg";
+import ShareSvg from "./SingleNft/bi_share-fill.svg";
+
+import SolanaLogo2Svg from "./SingleNft/solana-logo-2.svg";
+
 export {
   LandingNfts,
   ArrowRightUpSvg,
@@ -78,4 +86,9 @@ export {
   ChooseImage90x90,
   VerifiedSvg,
   NftImageSvg,
+  SingleNftSvg,
+  ArrowRightUpSquareSvg,
+  RefreshSvg,
+  ShareSvg,
+  SolanaLogo2Svg,
 };

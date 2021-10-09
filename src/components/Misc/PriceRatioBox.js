@@ -9,6 +9,12 @@ const PriceRatioBox = () => {
   const classes = useStyles();
   const [active, setActive] = useState(0);
 
+  const [price, setPrice] = useState("");
+
+  const [minimumBid, setMinimumBid] = useState("");
+  const [reservePrice, setReservePrice] = useState("");
+  const [expirationBid, setExpirationBid] = useState("");
+
   return (
     <Box className={classes.container}>
       <Box className={classes.contentContainer}>
@@ -29,7 +35,11 @@ const PriceRatioBox = () => {
               lineHeight="2.4rem"
               marginBottom="3.5rem"
             />
-            <Input placeholder="Enter Price" />
+            <Input
+              placeholder="Enter Price"
+              value={price}
+              setValue={setPrice}
+            />
           </Box>
         ) : (
           <Box>
@@ -39,6 +49,8 @@ const PriceRatioBox = () => {
               labelFontWeight={500}
               height="6rem"
               marginBottom="3rem"
+              value={minimumBid}
+              setValue={setMinimumBid}
             />
             <InputWithLabel
               labelText="Reserve Price"
@@ -46,6 +58,8 @@ const PriceRatioBox = () => {
               height="6rem"
               placeholder="Enter Price"
               marginBottom="3rem"
+              value={reservePrice}
+              setValue={setReservePrice}
             />
             <InputWithLabel
               labelText="Expiration Date"
@@ -53,6 +67,8 @@ const PriceRatioBox = () => {
               labelFontWeight={500}
               marginBottom="3rem"
               height="6rem"
+              value={expirationBid}
+              setValue={setExpirationBid}
             />
           </Box>
         )}

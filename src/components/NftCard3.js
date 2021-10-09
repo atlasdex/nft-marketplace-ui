@@ -2,12 +2,18 @@ import { Box, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import { ProfileAvatarSvg, NftSvg1, FavoriteSvg, VerifiedSvg } from "../assets";
 import Label from "./Inputs/Label";
+import { useHistory } from "react-router";
 
 const NftCard3 = () => {
   const classes = useStyles();
 
+  const history = useHistory();
+
   return (
-    <Box className={classes.container}>
+    <Box
+      className={classes.container}
+      onClick={() => history.push("/single-nft")}
+    >
       <Box className={classes.header}>
         <img src={NftSvg1} style={{ width: "100%" }} />
 
@@ -90,6 +96,7 @@ const useStyles = makeStyles((theme) => ({
     height: "48rem",
     padding: "1rem",
     marginRight: "2.5rem",
+    cursor: "pointer",
   },
 
   header: {

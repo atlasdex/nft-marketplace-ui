@@ -22,3 +22,24 @@ export const setWalletData = (data) => (dispatch) => {
     payload: data,
   });
 };
+
+export const uploadFileAndGetLink = async (fileToBeSend) => {
+  if (fileToBeSend) {
+    try {
+      let data = {
+        file: fileToBeSend,
+        upload_preset: "ml_default",
+      };
+
+      let result = await fetch(
+        "https://api.cloudinary.com/v1_1/dlin8rzcj/upload",
+        data
+      );
+      console.log(result);
+      if (result.payload.secure_url) {
+        console.log(result.payload.secure_url);
+        return result.payload.secure_url;
+      }
+    } catch (error) {}
+  }
+};

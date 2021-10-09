@@ -24,6 +24,8 @@ import MyCollections from "./containers/MyCollections";
 import Profile from "./containers/Profile";
 import MarketPlace from "./containers/Marketplace";
 import EditNft from "./containers/EditNft";
+import CreateNft from "./containers/CreateNft";
+import SingleNft from "./containers/SingleNft";
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
               <Route component={Profile} path="/profile" exact />
               <Route component={MarketPlace} path="/marketplace" exact />
               <Route component={EditNft} path="/edit-nft" exact />
+              <Route component={CreateNft} path="/create-nft" exact />
+              <Route component={SingleNft} path="/single-nft" exact />
             </Switch>
           </Layout>
         </Router>

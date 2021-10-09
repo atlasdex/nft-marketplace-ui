@@ -80,7 +80,7 @@ const Header = () => {
         </Button>
         <Button
           className={classes.btn}
-          onClick={() => history.push("create-new-collection")}
+          onClick={() => history.push("create-nft")}
         >
           <Typography className={classes.btnText}>Create</Typography>
         </Button>
